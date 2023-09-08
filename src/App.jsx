@@ -64,42 +64,32 @@ function UsersTable({ usersList, onChange }) {
       </thead>
       <tbody>
         {usersList.map((user) => (
-          <tr key={user.id}>
-            <td>
-              <input
-                type="checkbox"
-                checked={user.isSelected}
-                onClick={() => handleCheckboxClick(user.id)}
-              />
-            </td>
-            <td>{user.name}</td>
-            <td>{user.age}</td>
-            <td>{user.age >= 18 ? "True" : "False"}</td>
-          </tr>
+          <UserRow
+            user={user}
+            handleChange={handleCheckboxClick}
+            key={user.id}
+          />
         ))}
       </tbody>
     </Table>
   );
 }
 
-// CREAR USERROW COMPONENT
-
-// <USERROW key={blabla}/>
-
-{
-  /* <tr>
-            <td>
-              <input
-                type="checkbox"
-                checked={user.isSelected}
-                onClick={() => handleCheckboxClick(user.id)}
-              />
-            </td>
-            <td>{user.name}</td>
-            <td>{user.age}</td>
-            <td>{user.age >= 18 ? "True" : "False"}</td>
-          </tr>
-        ))} */
+function UserRow({ user, handleChange }) {
+  return (
+    <tr>
+      <td>
+        <input
+          type="checkbox"
+          checked={user.isSelected}
+          onClick={() => handleChange(user.id)}
+        />
+      </td>
+      <td>{user.name}</td>
+      <td>{user.age}</td>
+      <td>{user.age >= 18 ? "True" : "False"}</td>
+    </tr>
+  );
 }
 
 //onClose en vez de setOpenModal    //addUser en vez de setUsersList

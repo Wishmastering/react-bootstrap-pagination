@@ -48,3 +48,11 @@ STEP BY STEP ->
 LUEGO ->
 
 PAGINACION (30m) , luego 'leetcode' (60m)
+
+===
+
+2:20:00 modular talk
+
+2:23:40 EXERCISE UNDERSTAND PACKAGE.JSON (ver video de package.json para entender mejor)
+
+2:27:35 pensar como crear componente
