@@ -46,7 +46,11 @@ export default function App() {
   };
 
   const handleJumbotron = () => {
-    console.log("Jumbotron");
+    // Filter Selected Users
+    const selectedUsers = usersList.filter((user) => user.isSelected);
+
+    // Shuffle the selected users randomly with the random algorhitm function
+    const shuffledUsers = shuffleArray(selectedUsers);
   };
 
   const handleUsersPerPage = (e) => {
