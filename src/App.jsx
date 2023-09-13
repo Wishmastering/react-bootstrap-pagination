@@ -45,6 +45,8 @@ export default function App() {
     setOpenModal(false); // Close the modal after adding a user
   };
 
+  // JUMBOTRON FUNCIONALITIES BELOW
+
   const handleJumbotron = () => {
     // Filter Selected Users
     const selectedUsers = usersList.filter((user) => user.isSelected);
@@ -52,6 +54,14 @@ export default function App() {
     // Shuffle the selected users randomly with the random algorhitm function
     const shuffledUsers = shuffleArray(selectedUsers);
   };
+
+  const shuffleArray = (users)=>{
+    const newArray = [...array];
+
+    for
+  }
+
+  // USER PER PAGE LOGIC BELOW
 
   const handleUsersPerPage = (e) => {
     const usersPerPage = e.target.value;
