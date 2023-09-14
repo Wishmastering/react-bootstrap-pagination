@@ -20,7 +20,7 @@ export default function App() {
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage, setUsersPerPage] = useState(2); // Number of users to display per page
+  const [usersPerPage, setUsersPerPage] = useState(5); // Number of users to display per page
 
   const handleDeleteUsers = () => {
     const updateUsersList = usersList.filter((user) => !user.isSelected);
@@ -53,13 +53,27 @@ export default function App() {
 
     // Shuffle the selected users randomly with the random algorhitm function
     const shuffledUsers = shuffleArray(selectedUsers);
+
+    // setUserList to new array with shuffled users
+    const updatedUserList = usersList.map((user) => {
+      if (user.isSelected) {
+        return shuffledUsers.pop();
+      }
+      return user;
+    });
+
+    setUsersList(updatedUserList);
   };
 
-  const shuffleArray = (users)=>{
-    const newArray = [...array];
+  const shuffleArray = (users) => {
+    const newArray = [...users];
 
-    for
-  }
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
 
   // USER PER PAGE LOGIC BELOW
 
