@@ -80,7 +80,7 @@ export default function App() {
   const handleUsersPerPage = (e) => {
     const usersPerPage = e.target.value;
 
-    // Calculate the new number of pages based on the new number of users per page
+    // Calculate the new number of pages based on the new number of users per pages
     const newNumberOfPages = Math.ceil(usersList.length / usersPerPage);
 
     // If the current page exceeds the new number of pages, set it to the last page
