@@ -246,3 +246,5 @@ function UsersInputModal({ openModal, onClose, addUser }) {
     </div>
   );
 }
+
+// Code & git conflict merging exercise
